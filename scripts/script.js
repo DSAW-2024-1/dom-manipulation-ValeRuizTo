@@ -46,11 +46,11 @@ const addTodoItem = function(text) {
   todoText.textContent = text;
 
   const cancelBtn = document.createElement('button');
-  cancelBtn.textContent = 'Cancelar';
+  cancelBtn.textContent = 'Eliminar';
   cancelBtn.classList.add('cancel-btn'); // Agregar la clase 'cancel-btn' al botón 'Cancelar'
 
   cancelBtn.addEventListener('click', function () {
-    const confirmar = confirm('¿Estás seguro de que quieres cancelar esta tarea?');
+    const confirmar = confirm('¿Estás seguro de que quieres eliminar esta tarea?');
     if (confirmar) {
       tareas.splice(tareas.indexOf(text), 1); // Eliminar la tarea del array de tareas
       todoList.removeChild(todoItem);
