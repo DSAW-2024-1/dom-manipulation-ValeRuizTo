@@ -10,14 +10,13 @@ body {
   margin: 0 auto;
   padding: 20px;
   background-color: #fff;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 12px 18px rgba(200, 20, 20, 0.1);
 }
 
 h1 {
   margin-bottom: 20px;
   color: #6c757d;
   text-align: center;
-
 }
 
 #todo-container {
@@ -34,7 +33,13 @@ h1 {
   background-color: #f8f9fa;
 }
 
-#guardar-btn {
+.button-container {
+  display: grid;
+  grid-template-columns: 68% 30%; 
+  grid-column-gap: 16px;
+
+ button {
+  width: 100%; 
   padding: 10px 20px;
   font-size: 16px;
   background-color: #e91e63;
@@ -43,46 +48,62 @@ h1 {
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s;
-  margin-top: 10px; /* Agregar margen superior al botón */
-}
+  margin-top: 10px;
+  
 
-#guardar-btn:hover {
+  &:hover {
   background-color: #c2185b;
+}
+ }
 }
 
 #todo-list {
   padding: 0;
   list-style-type: none;
-}
-
-#todo-list li {
+ li {
   padding: 10px;
   background-color: #f8f9fa;
   border-radius: 4px;
-  margin-bottom: 5px; /* Reducir margen inferior de los elementos de la lista */
+  margin-bottom: 5px; 
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-#todo-list li:hover {
+  &:hover {
   background-color: #e0e0e0;
 }
+ }
+}
 
-@media (max-width: 800px) {
+@media (max-width: 500px) {
   .container {
     padding: 10px;
   }
 
   #todo-input {
-    width: 100%;
+    width: 100%; 
+    box-sizing: border-box; 
   }
 
-  #guardar-btn {
-    width: 100%;
-    margin-top: 10px;
+  .button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; 
+  
+    button {
+    width: 100%; 
+    margin-top: 10px; 
   }
 }
+
+  #guardar-btn {
+    width: 100%; 
+  }
+
+  #ordenar-btn {
+    width:fit-content; 
+  }
+}
+
 #todo-list .cancel-btn {
   padding: 5px 10px;
   font-size: 14px;
@@ -90,10 +111,9 @@ h1 {
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s;
-
   background-color: #d93275;
   color: white;
-  &:hover{
+  &:hover {
   background-color: #f180ad;
-  }
+}
 }
