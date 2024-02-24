@@ -1,59 +1,99 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  margin-bottom: 20px;
+  color: #6c757d;
+  text-align: center;
+
+}
+
+#todo-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#todo-input {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f9fa;
+}
+
+#guardar-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #e91e63;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 10px; /* Agregar margen superior al botón */
+}
+
+#guardar-btn:hover {
+  background-color: #c2185b;
+}
+
+#todo-list {
+  padding: 0;
+  list-style-type: none;
+}
+
+#todo-list li {
+  padding: 10px;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+  margin-bottom: 5px; /* Reducir margen inferior de los elementos de la lista */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#todo-list li:hover {
+  background-color: #e0e0e0;
+}
+
+@media (max-width: 800px) {
+  .container {
+    padding: 10px;
   }
-  
-  h1 {
-    text-align: center;
-  }
-  
-  #todo-container {
-    width: 80%;
-    margin: 0 auto;
-  }
-  
+
   #todo-input {
-    width: calc(100% - 100px);
-    padding: 8px;
-    margin-bottom: 10px;
+    width: 100%;
   }
-  
+
   #guardar-btn {
-    padding: 8px 15px;
-    margin-bottom: 10px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
   }
-  
-  #guardar-btn:hover {
-    background-color: #45a049;
+}
+#todo-list .cancel-btn {
+  padding: 5px 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  background-color: #d93275;
+  color: white;
+  &:hover{
+  background-color: #f180ad;
   }
-  
-  #todo-list {
-    list-style-type: none;
-  }
-  
-  .todo-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 5px;
-  }
-  
-  .todo-item input[type="checkbox"] {
-    margin-right: 10px;
-  }
-  
-  .todo-item.completed span {
-    text-decoration: line-through;
-    color: #999;
-  }
-  
+}
