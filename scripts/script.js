@@ -1,7 +1,7 @@
 const todoInput = document.getElementById('todo-input');
 const guardarBtn = document.getElementById('guardar-btn');
 const todoList = document.getElementById('todo-list');
-const todoContainer = document.getElementById('todo-container'); // Agregar la variable todoContainer
+const todoContainer = document.getElementById('todo-container'); 
 const ordenarBtn = document.getElementById('ordenar-btn');
 
 const tareas = []; // Crear un array vacío para almacenar las tareas
@@ -34,11 +34,11 @@ const addTodoItem = function(text) {
     if (this.checked) {
       todoItem.classList.add('completed');
       this.nextElementSibling.style.textDecoration = 'line-through';
-      todoItem.style.backgroundColor = '#ffeeff'; // cambiar el color de fondo del elemento cuando el checkbox está marcado
+      todoItem.style.backgroundColor = '#ffeeff'; 
     } else {
       todoItem.classList.remove('completed');
       this.nextElementSibling.style.textDecoration = 'none';
-      todoItem.style.backgroundColor = ''; // restaurar el color de fondo original del elemento cuando el checkbox no está marcado
+      todoItem.style.backgroundColor = ''; 
     }
   });
 
@@ -67,8 +67,8 @@ const addTodoItem = function(text) {
 ordenarBtn.addEventListener('click', function() {
   // Ordenar las tareas alfabéticamente
   tareas.sort(function(a, b) {
-    var textA = a.toUpperCase();
-    var textB = b.toUpperCase();
+    let textA = a.toUpperCase();
+    let textB = b.toUpperCase();
     return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
   });
 
